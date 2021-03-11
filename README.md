@@ -17,7 +17,7 @@ npm install nano-unit-converter
 ## Examples
 
 ```js
-import { megaToRaw, rawToMega } from 'nano-unit-converter';
+import { NanoToRaw, RawToNano } from 'nano-unit-converter';
 
 NanoToRaw('1.13');                             // '1130000000000000000000000000000'
 NanoToRaw('1');                               // '1000000000000000000000000000000'
