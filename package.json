@@ -1,0 +1,31 @@
+{
+  "name": "nano-helper",
+  "version": "1.0.0",
+  "description": "convert raws to nano and nano to raws",
+  "main": "src/nanohelper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rathodudayy/nano-helper.git"
+  },
+  "keywords": [
+    "nano",
+    "unit",
+    "converter",
+    "raws",
+    "crypto",
+    "nano",
+    "currency"
+  ],
+  "author": "Uday Rathod",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rathodudayy/nano-helper/issues"
+  },
+  "homepage": "https://github.com/rathodudayy/nano-helper#readme",
+  "dependencies": {
+    "big.js": "^6.0.3"
+  }
+}
