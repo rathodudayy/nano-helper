@@ -2,25 +2,11 @@ import Big from 'big.js';
 
 Big.NE = -31;
 Big.PE = 39;
-
-
-const RAW_IN_MEGA = new Big('1000000000000000000000000000000');
-
-const MEGA_IN_RAW = new Big('.000000000000000000000000000001');
-
-const RAW_MIN_AMOUNT = new Big('1');
-
-const RAW_MAX_AMOUNT = new Big('340282366920938463463374607431768211455');
-
-const MEGA_MIN_AMOUNT = new Big('.000000000000000000000000000001');
-
-const MEGA_MAX_AMOUNT = new Big('340282366.920938463463374607431768211455');
-
-
+const RAW = new Big('1000000000000000000000000000000');
 
 export function RawToNano(raw){
 
-	let rawBig: Big;
+	let rawBig ;
 
 	try {
 		rawBig = new Big(raw);
@@ -28,42 +14,30 @@ export function RawToNano(raw){
 		throw Error('The raw amount is invalid.');
 	}
 
-	if (rawBig.lt(0)) {
-		throw Error('The raw amount must not be negative.');
-	}
-
-	if (rawBig.lt(RAW_MIN_AMOUNT)) {
-		throw Error('The raw amount is too small.');
-	}
-
-	if (rawBig.gt(RAW_MAX_AMOUNT)) {
-		throw Error('The raw amount is too large.');
-	}
-
-	return rawBig.times(MEGA_IN_RAW).toString();
+	return rawBig.div(RAW).toString();
 }
 
-export function NanoToRaw(mega) {
+export function NanoToRaw(nano) {
 
-	let megaBig: Big;
+	let nanoBig;
 
 	try {
-		megaBig = new Big(mega);
+		nanoBig = new Big(nano);
 	} catch (error) {
-		throw Error('The mega amount is invalid.');
+		throw Error('The nano amount is invalid.');
 	}
 
-	if (megaBig.lt(0)) {
-		throw Error('The mega amount must not be negative.');
+	return nanoBig.times(RAW).toString();
+}
+
+export function FormatNano(n) {
+	const str_n = n.toString();
+	if(str_n.length > 15)
+	{
+		return str_n.slice(0, 15);
+	}
+	else{
+		return n;
 	}
 
-	if (megaBig.lt(MEGA_MIN_AMOUNT)) {
-		throw Error('The mega amount is too small.');
-	}
-
-	if (megaBig.gt(MEGA_MAX_AMOUNT)) {
-		throw Error('The mega amount is too large.');
-	}
-
-	return megaBig.times(RAW_IN_MEGA).toString();
 }
