@@ -11,13 +11,13 @@ Nano Helper converts raw to nano and nano to raw for the [Nano](https://nano.org
 ## Installation
 
 ```
-npm install nano-unit-converter
+npm install nano-helper
 ```
 
 ## Examples
 
 ```js
-import { NanoToRaw, RawToNano } from 'nano-unit-converter';
+import { NanoToRaw, RawToNano } from 'nano-helper';
 
 NanoToRaw('1.13');                             // '1130000000000000000000000000000'
 NanoToRaw('1');                               // '1000000000000000000000000000000'
