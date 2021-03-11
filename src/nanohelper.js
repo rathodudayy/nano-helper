@@ -3,6 +3,7 @@ import Big from 'big.js';
 Big.NE = -31;
 Big.PE = 39;
 const RAW = new Big('1000000000000000000000000000000');
+const NANO = new Big('0.000000000000000000000000000001');
 
 export function RawToNano(raw){
 
@@ -13,8 +14,7 @@ export function RawToNano(raw){
 	} catch (error) {
 		throw Error('The raw amount is invalid.');
 	}
-
-	return rawBig.div(RAW).toString();
+	return rawBig.mul(NANO).toString();
 }
 
 export function NanoToRaw(nano) {
@@ -30,11 +30,11 @@ export function NanoToRaw(nano) {
 	return nanoBig.times(RAW).toString();
 }
 
-export function FormatNano(n) {
+export function FormatNano(n, limit) {
 	const str_n = n.toString();
-	if(str_n.length > 15)
+	if(str_n.length > limit)
 	{
-		return str_n.slice(0, 15);
+		return str_n.slice(0, limit);
 	}
 	else{
 		return n;
