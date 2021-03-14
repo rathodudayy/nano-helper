@@ -35,7 +35,7 @@ FormatNano(RawToNano('72000000200233734563402000000000000'), 18);  // '72000.000
 ## Usage
 
 
-## FormateNano(Amount, Limit);
+## FormatNano(Amount, Limit);
 ```js
 
 FormatNano( '72000000200233734563402000000000000', 15 );       // '72000.000200233'
