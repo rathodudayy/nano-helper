@@ -1,6 +1,6 @@
 {
   "name": "nano-helper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "convert raws to nano and nano to raws",
   "main": "src/nanohelper.js",
   "scripts": {
